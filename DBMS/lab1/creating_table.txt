@@ -1,0 +1,38 @@
+create database d101;
+\c d101;
+
+CREATE TABLE pseudonym (
+id_ps integer PRIMARY KEY,
+assumed_name text
+);
+
+CREATE TABLE author (
+id_au integer PRIMARY KEY,
+name text,
+id_ps integer REFERENCES pseudonym (id_ps) ON DELETE SET NULL,
+UNIQUE (id_ps)
+);
+
+CREATE TABLE publishing_house (
+id_ph integer PRIMARY KEY,
+publ_name text
+);
+
+
+CREATE TABLE year_of_creating (
+id_ye integer PRIMARY KEY,
+date integer
+);
+
+CREATE TABLE book (
+id_bo integer PRIMARY KEY,
+title text,
+id_au integer REFERENCES author (id_au) ON DELETE CASCADE,
+id_ye integer REFERENCES year_of_creating (id_ye),
+UNIQUE (id_ye)
+);
+
+CREATE TABLE book_publ (
+id_bo integer REFERENCES book (id_bo) ON DELETE CASCADE,
+id_ph integer REFERENCES publishing_house (id_ph) ON DELETE CASCADE
+);

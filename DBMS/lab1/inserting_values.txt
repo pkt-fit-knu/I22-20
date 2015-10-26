@@ -1,0 +1,35 @@
+\c d101;
+
+INSERT INTO pseudonym VALUES(1,'О.ГЕНРИ');
+INSERT INTO pseudonym VALUES(2,'Марк Твен');
+SELECT * FROM pseudonym;
+
+INSERT INTO author VALUES(1,'Уильям Портер',1);
+INSERT INTO author VALUES(2,'Сэмюэл Клеменс',2);
+INSERT INTO author VALUES(3,'Федор Достоевский',NULL);
+SELECT * FROM author;
+
+INSERT INTO year_of_creating VALUES(1,1950);
+INSERT INTO year_of_creating VALUES(2,1852);
+INSERT INTO year_of_creating VALUES(3,1700);
+INSERT INTO year_of_creating VALUES(4,1959);
+INSERT INTO year_of_creating VALUES(5,1844);
+SELECT * FROM year_of_creating;
+
+INSERT INTO book VALUES(1,'Приключения Тома Сойера',2,1);
+INSERT INTO book VALUES(2,'Приключения Гекльюери Финна',2,2);
+INSERT INTO book VALUES(3,'Идиот',3,3);
+INSERT INTO book VALUES(4,'Дары волхвов',1,4);
+INSERT INTO book VALUES(5,'Короли и капуста',1,5);
+SELECT * FROM book;
+
+INSERT INTO publishing_house VALUES(1,'АЗБУКА КЛАССИКА');
+INSERT INTO publishing_house VALUES(2,'pocketbook');
+SELECT * FROM publishing_house;
+
+INSERT INTO book_publ VALUES(1,1);
+INSERT INTO book_publ VALUES(1,2);
+INSERT INTO book_publ VALUES(2,1);
+INSERT INTO book_publ VALUES(3,1);
+INSERT INTO book_publ VALUES(4,2);
+SELECT * FROM book_publ;
